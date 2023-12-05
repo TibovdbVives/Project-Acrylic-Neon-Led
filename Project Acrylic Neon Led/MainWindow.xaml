@@ -11,8 +11,8 @@
         <Button Content="Led off" HorizontalAlignment="Left" Margin="176,56,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="off" Click="off_Click"/>
         <Button Content="Connect" HorizontalAlignment="Left" Margin="58,129,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="connect" Click="connect_Click"/>
         <Button Content="Disconnect" HorizontalAlignment="Left" Margin="176,129,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="disconnect" Click="disconnect_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="310,81,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Name="status"/>
-        <TextBox HorizontalAlignment="Left" Margin="310,154,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="comportnumber"/>
+        <TextBlock HorizontalAlignment="Left" Margin="310,81,0,0" TextWrapping="Wrap" Text="statustext" VerticalAlignment="Top" Name="status"/>
+        <TextBox HorizontalAlignment="Left" Margin="310,154,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Name="comportnumber"/>
         <Label Content="status:" HorizontalAlignment="Left" Margin="310,50,0,0" VerticalAlignment="Top"/>
         <Label Content="welke compoort:" HorizontalAlignment="Left" Margin="310,129,0,0" VerticalAlignment="Top"/>
 

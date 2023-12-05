@@ -62,5 +62,15 @@ namespace Project_Acrylic_Neon_Led
                 MessageBox.Show("First connect and then disconnect");
             }
         }
+
+
+
+        /*
+         * Eerst testen met gewoon een led aan doen op het board zelf
+         * dan kijken voor verschillende kleuren zijn verschillende leds
+         * vragen thuis hoelang 1 zo'n strip is van led en op hoeveel volt dat werkt dat ik de juiste hoeveelheid spanning stuur naar de leds
+         * verschillende uitgangen kunnen aansturen/meten met multimeter
+         * uiteindelijk aansturen
+         */
     }
 }
