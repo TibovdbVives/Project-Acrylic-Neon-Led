@@ -26,8 +26,7 @@ namespace Project_Acrylic_Neon_Led
 
         private void on_Click(object sender, RoutedEventArgs e)
         {
-            //testen
-            sp.Write("0002");
+            
             sp.Write("1");
         }
 
