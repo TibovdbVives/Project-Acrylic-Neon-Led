@@ -17,22 +17,21 @@ namespace Project_Acrylic_Neon_Led
     /// </summary>
     public partial class MainWindow : Window
     {
-        SerialPort sp = new SerialPort();
+        SerialPort serial = new SerialPort();
+        
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         private void on_Click(object sender, RoutedEventArgs e)
-        {
-            
-            sp.Write("1");
+        { 
+            serial.Write("1");
         }
 
         private void off_Click(object sender, RoutedEventArgs e)
         {
-            sp.Write("0");
+            serial.Write("0");
         }
 
         private void connect_Click(object sender, RoutedEventArgs e)
@@ -40,9 +39,9 @@ namespace Project_Acrylic_Neon_Led
             try
             {
                 String portName = comportnumber.Text;
-                sp.PortName = portName;
-                sp.BaudRate = 9600;
-                sp.Open();
+                serial.PortName = portName;
+                serial.BaudRate = 9600;
+                serial.Open();
                 status.Text = "Connected";
             }
             catch (Exception)
@@ -55,7 +54,7 @@ namespace Project_Acrylic_Neon_Led
         {
             try
             {
-                sp.Close();
+                serial.Close();
                 status.Text = "Disconnected";
             }
             catch (Exception)
