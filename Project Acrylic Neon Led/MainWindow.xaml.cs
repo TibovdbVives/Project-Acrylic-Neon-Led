@@ -63,6 +63,11 @@ namespace Project_Acrylic_Neon_Led
             }
         }
 
+        private void kleurtest()
+        {
+
+        }
+
 
 
         /*
