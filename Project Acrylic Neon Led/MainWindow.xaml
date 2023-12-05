@@ -1,0 +1,20 @@
+﻿<Window x:Class="Project_Acrylic_Neon_Led.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Acrylic_Neon_Led"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Led on" HorizontalAlignment="Left" Margin="58,56,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="on" Click="on_Click"/>
+        <Button Content="Led off" HorizontalAlignment="Left" Margin="176,56,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="off" Click="off_Click"/>
+        <Button Content="Connect" HorizontalAlignment="Left" Margin="58,129,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="connect" Click="connect_Click"/>
+        <Button Content="Disconnect" HorizontalAlignment="Left" Margin="176,129,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="disconnect" Click="disconnect_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="310,81,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Name="status"/>
+        <TextBox HorizontalAlignment="Left" Margin="310,154,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="comportnumber"/>
+        <Label Content="status:" HorizontalAlignment="Left" Margin="310,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="welke compoort:" HorizontalAlignment="Left" Margin="310,129,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Acrylic Neon Led", "Project Acrylic Neon Led\Project Acrylic Neon Led.csproj", "{532B971F-59BE-43FE-BC93-116AA5C92BD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{532B971F-59BE-43FE-BC93-116AA5C92BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532B971F-59BE-43FE-BC93-116AA5C92BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532B971F-59BE-43FE-BC93-116AA5C92BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532B971F-59BE-43FE-BC93-116AA5C92BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96BE8004-E1FB-4A1C-AC21-DFCB4F503C25}
+	EndGlobalSection
+EndGlobal
