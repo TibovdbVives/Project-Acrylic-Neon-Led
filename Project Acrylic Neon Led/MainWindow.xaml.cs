@@ -34,22 +34,8 @@ namespace Project_Acrylic_Neon_Led
             }
 
             string gekozenkleur = Kleurkeuzetextbox.Text;
-            if (string.Equals(gekozenkleur, "Rood", StringComparison.OrdinalIgnoreCase))
-            {
-                serial.Write("1");
-            }
-            else if (string.Equals(gekozenkleur, "Blauw", StringComparison.OrdinalIgnoreCase))
-            {
-                serial.Write("2");
-            }
-            else if (string.Equals(gekozenkleur, "Groen", StringComparison.OrdinalIgnoreCase))
-            {
-                serial.Write("3");
-            }
-            else
-            {
-                MessageBox.Show("Geef een geldig kleur");
-            }
+            string kleurnummer = Kleurkeuze.Kleurnaarnummer(gekozenkleur);
+            serial.Write(kleurnummer);
         }
 
         private void off_Click(object sender, RoutedEventArgs e)
@@ -75,7 +61,15 @@ namespace Project_Acrylic_Neon_Led
             }
             catch (Exception)
             {
-                MessageBox.Show("Geef een juiste COM poort nummer");
+                if(status.Text == "Connected")
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Geef een juiste COM poort nummer");
+                }
+                
             }
         }
 
@@ -99,20 +93,5 @@ namespace Project_Acrylic_Neon_Led
                 MessageBox.Show("Je bent momenteel niet verbonden.");
             }
         }
-
-        private void kleurtest()
-        {
-
-        }
-
-
-
-        /*
-         * Eerst testen met gewoon een led aan doen op het board zelf
-         * dan kijken voor verschillende kleuren zijn verschillende leds
-         * vragen thuis hoelang 1 zo'n strip is van led en op hoeveel volt dat werkt dat ik de juiste hoeveelheid spanning stuur naar de leds
-         * verschillende uitgangen kunnen aansturen/meten met multimeter
-         * uiteindelijk aansturen
-         */
     }
 }
