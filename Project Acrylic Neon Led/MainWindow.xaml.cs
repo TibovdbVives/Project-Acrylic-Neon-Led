@@ -18,19 +18,47 @@ namespace Project_Acrylic_Neon_Led
     public partial class MainWindow : Window
     {
         SerialPort serial = new SerialPort();
-        
+        bool isConnected = false;
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
         private void on_Click(object sender, RoutedEventArgs e)
-        { 
-            serial.Write("1");
+        {
+            if (!isConnected)
+            {
+                MessageBox.Show("Je moet eerst verbinden met de microcontroller.");
+                return;
+            }
+
+            string gekozenkleur = Kleurkeuzetextbox.Text;
+            if (string.Equals(gekozenkleur, "Rood", StringComparison.OrdinalIgnoreCase))
+            {
+                serial.Write("1");
+            }
+            else if (string.Equals(gekozenkleur, "Blauw", StringComparison.OrdinalIgnoreCase))
+            {
+                serial.Write("2");
+            }
+            else if (string.Equals(gekozenkleur, "Groen", StringComparison.OrdinalIgnoreCase))
+            {
+                serial.Write("3");
+            }
+            else
+            {
+                MessageBox.Show("Geef een geldig kleur");
+            }
         }
 
         private void off_Click(object sender, RoutedEventArgs e)
         {
+            if (!isConnected)
+            {
+                MessageBox.Show("Je moet eerst verbinden met de microcontroller.");
+                return;
+            }
             serial.Write("0");
         }
 
@@ -42,24 +70,33 @@ namespace Project_Acrylic_Neon_Led
                 serial.PortName = portName;
                 serial.BaudRate = 9600;
                 serial.Open();
+                isConnected = true;
                 status.Text = "Connected";
             }
             catch (Exception)
             {
-                MessageBox.Show("Give valid port number");
+                MessageBox.Show("Geef een juiste COM poort nummer");
             }
         }
 
         private void disconnect_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (isConnected)
             {
-                serial.Close();
-                status.Text = "Disconnected";
+                try
+                {
+                    serial.Close();
+                    isConnected = false;
+                    status.Text = "Disconnected";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Er is een fout opgetreden bij het verbreken van de verbinding.");
+                }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("First connect and then disconnect");
+                MessageBox.Show("Je bent momenteel niet verbonden.");
             }
         }
 
