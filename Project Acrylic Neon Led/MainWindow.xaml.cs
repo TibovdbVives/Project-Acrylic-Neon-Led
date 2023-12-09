@@ -37,63 +37,71 @@ namespace Project_Acrylic_Neon_Led
                 return;
             }
 
+            //kleurentextbox in een variabele steken
             string gekozenkleur = Kleurkeuzetextbox.Text;
+            //kleurnummer komt overeen met de nummer dat overeen komt met de kleur (zie klasse "Kleurkeuze")
             string kleurnummer = Kleurkeuze.Kleurnaarnummer(gekozenkleur);
+            //nummer doorsturen naar je serial
             serial.Write(kleurnummer);
 
+            //bij nummer zeven error geven
             if (kleurnummer == "7")
             {
                 MessageBox.Show("Ongeldig kleur");
             }
         }
 
+        //Leds uitschakelen
         private void off_Click(object sender, RoutedEventArgs e)
         {
+            //Als hij NIET geconnecteerd is
             if (!isConnected)
             {
                 MessageBox.Show("Je moet eerst verbinden met de microcontroller.");
                 return;
             }
+            //alles uitschakelen
             serial.Write("0");
         }
 
+        //COM poort connecteren
         private void connect_Click(object sender, RoutedEventArgs e)
         {
+            //
             try
             {
-                String portName = comportnumber.Text;
-                serial.PortName = portName;
+                //poortnaam uit tekstbox halen
+                serial.PortName = comportnumber.Text;
+                //Communicatie snelheid instellen
                 serial.BaudRate = 9600;
+                //seriele poort openen
                 serial.Open();
                 isConnected = true;
                 status.Text = "Connected";
             }
             catch (Exception)
             {
-                if(status.Text == "Connected")
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("Geef een juiste COM poort nummer");
-                }
-                
+                //uitzondering (bij een foute poortnummer)
+                MessageBox.Show("Geef een juiste COM poort nummer");
             }
         }
 
+        //COM poort disconnecten
         private void disconnect_Click(object sender, RoutedEventArgs e)
         {
+            //enkel als hij dus eerst geconnecteerd is
             if (isConnected)
             {
                 try
                 {
+                    //seriele poort sluiten
                     serial.Close();
                     isConnected = false;
                     status.Text = "Disconnected";
                 }
                 catch (Exception)
                 {
+                    //als je eerst geconnecteerd hebt en wilt disconnecten maar het niet lukt
                     MessageBox.Show("Er is een fout opgetreden bij het verbreken van de verbinding.");
                 }
             }
