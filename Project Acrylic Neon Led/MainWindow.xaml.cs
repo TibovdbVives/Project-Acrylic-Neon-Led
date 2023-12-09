@@ -36,6 +36,11 @@ namespace Project_Acrylic_Neon_Led
             string gekozenkleur = Kleurkeuzetextbox.Text;
             string kleurnummer = Kleurkeuze.Kleurnaarnummer(gekozenkleur);
             serial.Write(kleurnummer);
+
+            if (kleurnummer == "7")
+            {
+                MessageBox.Show("Ongeldig kleur");
+            }
         }
 
         private void off_Click(object sender, RoutedEventArgs e)

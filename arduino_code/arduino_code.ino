@@ -60,12 +60,50 @@ void loop()
       digitalWrite(16, LOW);
       digitalWrite(17, LOW);
     }
-    else if (c == '0')
+    if (c == '4')
+    {
+      lcd.clear();
+      digitalWrite(16, HIGH);
+      digitalWrite(17, HIGH);
+      lcd.setCursor(0,0);
+      lcd.print("Paars");
+      digitalWrite(18, LOW);
+    }
+    if (c == '5')
+    {
+      lcd.clear();
+      digitalWrite(18, HIGH);
+      digitalWrite(17, HIGH);
+      lcd.setCursor(0,0);
+      lcd.print("Cyan");
+      digitalWrite(16, LOW);
+    }
+    if (c == '6')
+    {
+      lcd.clear();
+      digitalWrite(18, HIGH);
+      digitalWrite(16, HIGH);
+      lcd.setCursor(0,0);
+      lcd.print("Geel");
+      digitalWrite(17, LOW);
+    }
+    if (c == '7')
+    {
+      lcd.clear();
+      digitalWrite(16, LOW);
+      digitalWrite(17, LOW);
+      digitalWrite(18, LOW);
+      lcd.setCursor(0,0);
+      lcd.print("Ongeldige Kleur");
+    }
+    if (c == '0')
     {
       digitalWrite(18, LOW);
       digitalWrite(16, LOW);
       digitalWrite(17, LOW);
       lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("Led's Uitgeschakeld");
     }
     
   }
