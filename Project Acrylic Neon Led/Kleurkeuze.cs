@@ -37,6 +37,7 @@ namespace Project_Acrylic_Neon_Led
             }
             else
             {
+                //als je ongeldig kleur geeft
                 return "7"; 
             }
         }
