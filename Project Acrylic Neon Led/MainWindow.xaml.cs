@@ -17,7 +17,9 @@ namespace Project_Acrylic_Neon_Led
     /// </summary>
     public partial class MainWindow : Window
     {
+        //nieuwe seriele poort aanmaken
         SerialPort serial = new SerialPort();
+        //Connected variabele
         bool isConnected = false;
 
         public MainWindow()
@@ -25,8 +27,10 @@ namespace Project_Acrylic_Neon_Led
             InitializeComponent();
         }
 
+        //Leds inschakelen
         private void on_Click(object sender, RoutedEventArgs e)
         {
+            //Als hij NIET geconnecteerd is
             if (!isConnected)
             {
                 MessageBox.Show("Je moet eerst verbinden met de microcontroller.");
