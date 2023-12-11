@@ -5,16 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Acrylic_Neon_Led"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="400">
-    <Border>
+        Title="MainWindow" Height="400" Width="400" ResizeMode="CanResizeWithGrip" Background="{x:Null}" WindowStyle="None" AllowsTransparency="True">
+    <Border CornerRadius="10" Background="White" BorderBrush="Gray" BorderThickness="0.3">
         <Grid>
-            <Grid.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="Red" Offset="0.2"/>
-                    <GradientStop Color="Blue" Offset="0.5"/>
-                    <GradientStop Color="Green" Offset="0.8"/>
-                </LinearGradientBrush>
-            </Grid.Background>
             <Button Content="Led on" HorizontalAlignment="Left" Margin="52,73,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="on" Click="on_Click" BorderThickness="5"/>
             <Button Content="Led off" HorizontalAlignment="Left" Margin="52,128,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="off" Click="off_Click" BorderThickness="5"/>
             <Button Content="Connect" HorizontalAlignment="Left" Margin="52,239,0,0" VerticalAlignment="Top" Height="50" Width="89" Name="connect" Click="connect_Click" BorderThickness="5"/>
